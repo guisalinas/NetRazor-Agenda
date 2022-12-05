@@ -1,0 +1,33 @@
+﻿@page
+@model Agenda_NetRazorP.Pages.Categories.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Categoria";
+}
+
+<div class="Contianer">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info"> Eliminar Categoria: </h2>
+
+            <form method="post">
+
+                <input type="hiden" asp-for="category.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="category.Name" class="form-label"></label>
+                    <input asp-for="category.Name" class="form-control" placeholder="Nombre de la categoria" readonly/>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="category.CreationDate" class="form-label"></label>
+                    <input asp-for="category.CreationDate" class="form-control" placeholder="Fecha de Creación" readonly/>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Eliminar Categoria</button>
+
+            </form>
+
+        <div>
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+    </div>
+</div>

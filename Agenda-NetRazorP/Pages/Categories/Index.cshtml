@@ -1,0 +1,56 @@
+﻿@page
+@model Agenda_NetRazorP.Pages.Categories.IndexModel
+@{
+    ViewData["Title"] = "Categorías";
+}
+
+<div class= "container">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-info"> Mis Categorías</h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Categories/New"> Nueva Categoria</a>
+        </div>
+    </div>
+</div>
+
+<div>
+    <br />
+    <br />
+    
+    @if(Model.Categories.Count() > 0){
+        <table id="tblCategories" class="table table-bordered" style="width: 100%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>@Html.DisplayNameFor(m => m.Categories.FirstOrDefault().Id)</th>
+                    <th>@Html.DisplayNameFor(m => m.Categories.FirstOrDefault().Name)</th>
+                    <th>@Html.DisplayNameFor(m => m.Categories.FirstOrDefault().CreationDate)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach( var category in Model.Categories )
+                {
+                    <tr>
+                        <td><img src="~/css/Img/category.png" class="text-center"/></td>
+                        <td>@Html.DisplayFor(m => category.Id)</td>
+                        <td>@Html.DisplayFor(m => category.Name)</td>
+                        <td>@Html.DisplayFor(m => category.CreationDate)</td>
+                        <td>
+                            <a class="btn btn-success" asp-page="../Categories/Detail" asp-route-id= "@category.Id"> Ver más</a>
+                            <a class="btn btn-warning" asp-page="../Categories/Edit" asp-route-id="@category.Id"> Editar </a>
+                            <a class="btn btn-danger" asp-page="../Categories/Delete" asp-route-id="@category.Id"> Borrar </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    }
+    else{
+        <p>No hay categorias para mostrar</p>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿@page
+@model Agenda_NetRazorP.Pages.Categories.DetailModel
+@{
+    ViewData["Title"] = "Detalle de la Categoria";
+}
+
+<div class="Contianer">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info"> Detalle de categoria: @Html.DisplayFor(m => m.category.Id)</h2>
+            <ul class="list-group">
+                <li class="list-group-item">ID: @Html.DisplayFor(m => m.category.Id)</li>
+                <li class="list-group-item">Nombre: @Html.DisplayFor(m => m.category.Name)</li>
+                <li class="list-group-item">Fecha de creacion: @Html.DisplayFor(m => m.category.CreationDate)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <a asp-page="Index" class="btn btn-success"> Volver</a>
+        </div>
+    </div>
+</div>

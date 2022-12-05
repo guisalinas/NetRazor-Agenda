@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="row">
+    <h1 class="text-center">Mi Agenda</h1>
+    <div class="col-1"></div>
+    <div class="col-5">
+        <div class="container img-portada">
+            <img class="img-fluid" src="~/css/Img/portada.png" />
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="btn-portada text-center">
+            <a class="btn btn-outline-primary" style="font-size: 250%" asp-area="" asp-page="/Categories/Index">Categorias</a>
+            <a class="btn btn-outline-primary" style="font-size: 250%" asp-area="" asp-page="/Contacts/Index">Contactos</a>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>

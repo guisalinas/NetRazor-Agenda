@@ -1,0 +1,33 @@
+﻿@page
+@model Agenda_NetRazorP.Pages.Categories.EditModel
+@{
+    ViewData["Title"] = "Editar Categoria";
+}
+
+<div class="Contianer">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info"> Eliminar Categoria: </h2>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="category.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="category.Name" class="form-label"></label>
+                    <input asp-for="category.Name" class="form-control" placeholder="Nombre de la categoria"  />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="category.CreationDate" class="form-label"></label>
+                    <input asp-for="category.CreationDate" class="form-control" placeholder="Fecha de Creación"  />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Actualizar Categoria</button>
+
+            </form>
+
+            <div>
+                <a asp-page="Index" class="btn btn-success"> Volver</a>
+            </div>
+        </div>
+    </div>

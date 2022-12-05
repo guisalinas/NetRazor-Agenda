@@ -1,0 +1,55 @@
+﻿@page
+@model Agenda_NetRazorP.Pages.Contacts.EditModel
+@{
+    ViewData["Title"] = "Editar Contacto";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-info"> Editar Contacto</h2>
+            <form method="post">
+                <input type="hidden" asp-for="contactVM.Contact.Id" />
+
+                <div class="mb-1">
+                    <label asp-for="contactVM.Contact.Name" class="form-label"></label>
+                    <input asp-for="contactVM.Contact.Name" class="form-control" placeholder="Nombre del Contacto" />
+                    <span asp-validation-for="contactVM.Contact.Name" class="text-danger"></span>
+                </div>
+                <div class="mb-1">
+                    <label asp-for="contactVM.Contact.Email" class="form-label"></label>
+                    <input asp-for="contactVM.Contact.Email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="contactVM.Contact.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-1">
+                    <label asp-for="contactVM.Contact.PhoneNumber" class="form-label"></label>
+                    <input asp-for="contactVM.Contact.PhoneNumber" class="form-control" placeholder="Número de Teléfono" />
+                    <span asp-validation-for="contactVM.Contact.PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-1">
+                    <label asp-for="contactVM.Contact.Category" class="form-label"></label>
+
+                    <select asp-for="contactVM.Contact.CategoryId"
+                            asp-items="@(new SelectList(Model.contactVM.CategoriesList, "Id", "Name"))" class="form-control">
+                    </select>
+
+                </div>
+                <div class="mb-1">
+                    <label asp-for="contactVM.Contact.CreationDate" class="form-label"></label>
+                    <input asp-for="contactVM.Contact.CreationDate" class="form-control" />
+                    <span asp-validation-for="contactVM.Contact.CreationDate" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Actualizar Contacto</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <a asp-page="Index" class="btn btn-success"> Volver</a>
+    </div>
+</div>
+</div>
